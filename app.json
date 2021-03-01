@@ -1,0 +1,12 @@
+{
+  "name": "order-generator",
+  "displayName": "order-generator",
+  "expo": {
+    "name": "order-generator",
+    "slug": "order-generator",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}

@@ -1,5 +1,8 @@
 # Created by https://www.gitignore.io/api/reactnative,intellij,android,osx,xcode
 
+ios/Pods/
+
+
 ### Android ###
 # Built application files
 *.apk

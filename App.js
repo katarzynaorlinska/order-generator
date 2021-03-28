@@ -1,35 +1,18 @@
-import React, { useState } from "react";
-import {
-  StyleSheet,
-  SafeAreaView,
-  Keyboard,
-  TouchableWithoutFeedback,
-} from "react-native";
-import Input from "./components/Input";
+import React from "react";
+import AddPart from "./screens/AddPart";
+import ListParts from "./screens/ListParts";
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
 
 export default function App() {
-  const [name, onChangeName] = useState("");
-  const [material, onChangeMaterial] = useState("");
+  const Stack = createStackNavigator();
 
   return (
-    <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
-      <SafeAreaView style={styles.container}>
-        <Input onChangeText={onChangeName} text={name} label={"Nazwa"} />
-        <Input
-          onChangeText={onChangeMaterial}
-          text={material}
-          label={"Materiał"}
-        />
-      </SafeAreaView>
-    </TouchableWithoutFeedback>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Lista części">
+        <Stack.Screen name="Lista części" component={ListParts} />
+        <Stack.Screen name="Dodaj część" component={AddPart} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "stretch",
-    justifyContent: "center",
-  },
-});
